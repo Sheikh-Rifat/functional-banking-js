@@ -33,8 +33,7 @@ function updateBalance(amount, add) {
 
     if (add == true) {
         balanceField.innerText = balanceAmount + amount;
-    } 
-    else{
+    } else {
         balanceField.innerText = balanceAmount - amount;
     }
 
@@ -52,9 +51,14 @@ document.getElementById("submit-deposit").addEventListener("click", function () 
 
     const depositAmount = getInputValue("deposit-amount");
 
-    updateInputValue("deposit-total", depositAmount);
+    if (depositAmount > 0) {
 
-    updateBalance(depositAmount, true);
+        updateInputValue("deposit-total", depositAmount);
+
+        updateBalance(depositAmount, true);
+    }
+
+
 
 
 })
@@ -67,9 +71,12 @@ document.getElementById("submit-withdraw").addEventListener("click", function ()
 
     const withdrawAmount = getInputValue("withdraw-amount");
 
-    updateInputValue("withdraw-total", withdrawAmount);
+    if (withdrawAmount > 0) {
+        updateInputValue("withdraw-total", withdrawAmount);
 
-    updateBalance(withdrawAmount, false);
+        updateBalance(withdrawAmount, false);
+
+    }
 
 
 })

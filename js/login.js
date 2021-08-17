@@ -9,7 +9,7 @@ document.getElementById("submit-btn").addEventListener("click", function () {
 
     // login validating
 
-    if (email == "brotherssk57@gmail.com" && password == "Rifat01917997474") {
+    if (email == "contact@rifat.com" && password == "1234") {
         window.location.href = "banking-site.html";
     } else {
         const error = document.getElementById("error-msg");
